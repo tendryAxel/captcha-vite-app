@@ -11,8 +11,14 @@ export default () => {
 
     const onclick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault();
-        axios.get("");
-        addOutput("test");
+        axios.get(import.meta.env.VITE_URL)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                addOutput(error.message)
+                console.error(error)
+            })
         setState(!state);
     }
 

@@ -1,4 +1,6 @@
-import {default as axios} from "axios";
+import useAWSWAFCaptchaAxios from "./aws-waf-captcha/useAWSWAFCaptchaAxios.ts";
+
+const axios = useAWSWAFCaptchaAxios()
 
 export const get = (
     addFunction: (output: string)=>void,

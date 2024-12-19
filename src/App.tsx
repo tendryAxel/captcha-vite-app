@@ -1,7 +1,9 @@
+import Form from "./components/Form.tsx";
+
 function App() {
   return (
       <div>
-          Test
+          <Form />
       </div>
   )
 }

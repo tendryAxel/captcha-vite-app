@@ -17,7 +17,7 @@ export default () => {
             })
             .catch(error => {
                 addOutput(error.message)
-                console.error(error)
+                // console.error(error)
             })
         setState(!state);
     }

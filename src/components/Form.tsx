@@ -1,5 +1,5 @@
-import {default as axios} from "axios";
 import {MouseEventHandler, useEffect, useState} from "react";
+import {get} from "../utils.ts";
 
 export default () => {
     const [outputs, setOutputs] = useState<string[]>([])
@@ -12,14 +12,7 @@ export default () => {
 
     const onclick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault();
-        axios.get(import.meta.env.VITE_URL)
-            .then(response => {
-                console.log(response.data)
-            })
-            .catch(error => {
-                addOutput(error.message)
-                // console.error(error)
-            })
+        get(addOutput);
         setState(!state);
     }
 

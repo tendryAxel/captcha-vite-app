@@ -12,10 +12,7 @@ export default () => {
 
     const onclick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault();
-        for (let i = 0; i < numberOfRequest; i++) {
-            get(addOutput, i);
-            setState(!state);
-        }
+        get(addOutput, numberOfRequest, numberOfRequest, ()=>setState(!state));
     }
 
     useEffect(() => {}, [state])
